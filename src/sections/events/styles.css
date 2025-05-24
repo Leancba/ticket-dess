@@ -1,0 +1,9 @@
+.event-section {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0rem;
+  gap: 15px;
+}

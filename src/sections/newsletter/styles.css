@@ -1,0 +1,50 @@
+.newsletter-section {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #bc0c0c;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.newsletter-section__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-section__subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-section__form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.newsletter-section__input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.newsletter-section__button {
+  padding: 0 1.2rem;
+  font-size: 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-section__button:hover {
+  background-color: #005ecb;
+}
