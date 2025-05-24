@@ -2,10 +2,7 @@
 import './styles.css';
 import Carrousel from '@/components/carrousel';
 import EventSection from '@/sections/events';
-import NewsletterSection from '@/sections/newsletter';
 import SocialLinksSection from '@/sections/social/SocialLinksSection';
-import BannerSection from '@/sections/banners';
-
 
 export default function HomePage() {
   return (
