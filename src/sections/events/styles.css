@@ -1,15 +1,18 @@
 .event-section {
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem 3rem;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 1rem 2rem;
 }
 
-
-@media (max-width: 768px) {
+@media (min-width: 640px) {
   .event-section {
-    padding: 1rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-section {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

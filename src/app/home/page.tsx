@@ -10,8 +10,8 @@ import SocialLinksSection from '@/sections/social/SocialLinksSection'
 export default function HomePage() {
   return (
     <div>
-      {/* <Carrousel/>
-      <EventSection/> */}
+      {/* <Carrousel/> */}
+      <EventSection/>
       {/* <NewsletterSection/>
       <SocialLinksSection/> */}
     </div>
