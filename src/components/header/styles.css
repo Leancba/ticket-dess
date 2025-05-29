@@ -107,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
   }
 
@@ -171,7 +171,6 @@
     right: 0;
     background-color: white;
     padding: 0.5rem 1rem;
-    overflow: hidden;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
