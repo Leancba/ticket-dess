@@ -2,17 +2,13 @@ import './styles.css';
 import Image from 'next/image';
 import { Phone, Email } from '@mui/icons-material';
 
-
 const Footer = () => {
   return (
     <footer className="footer">
-
       <div className="footer__side-image-left">
         <Image src="/credits-cards.png" alt="credit-cards" width={153} height={40} />
       </div>
-
       <div className="footer__bottom-content">
-
         <nav className="footer__nav">
           <ul className="footer__nav-list">
             <li><a href="#" className="footer__nav-link">Recitales</a></li>
@@ -26,7 +22,6 @@ const Footer = () => {
             <li><a href="#" className="footer__nav-link">Mi cuenta</a></li>
           </ul>
         </nav>
-
         <div className="footer__contact">
           <div className="footer__contact-item">
             <Phone fontSize="small" />
@@ -38,7 +33,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       <div className="footer__side-image-right">
         <Image
           src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg"
@@ -47,7 +41,6 @@ const Footer = () => {
           height={70}
         />
       </div>
-
     </footer>
   );
 };
