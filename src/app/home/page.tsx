@@ -11,9 +11,9 @@ export default function HomePage() {
   return (
     <div>
       {/* <Carrousel/>
-      <EventSection/>
-      <NewsletterSection/> */}
-      <SocialLinksSection/>
+      <EventSection/> */}
+      {/* <NewsletterSection/>
+      <SocialLinksSection/> */}
     </div>
   );
 }
