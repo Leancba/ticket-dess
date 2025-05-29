@@ -37,8 +37,6 @@ const Footer = () => {
             <a href="mailto:hola@todopass.com.ar" className="footer__contact-link">hola@todopass.com.ar</a>
           </div>
         </div>
-
-
       </div>
 
       <div className="footer__side-image-right">
