@@ -1,6 +1,7 @@
 'use client';
 
 import CardEvent from "@/components/CardEvent";
+import { motion } from 'framer-motion';
 import './styles.css'
 
 const eventos = [
@@ -60,7 +61,7 @@ const eventos = [
   },
   {
     imageSrc: 'https://www.todopass.com.ar/567-home_default/piti-fernandez.jpg',
-   title: 'Un evento',
+    title: 'Un evento',
     date: 'Sabado 5 de julio',
     location: 'Alta Gracia',
   },
@@ -80,10 +81,18 @@ const eventos = [
 
 const EventSection = () => {
   return (
-    <section className="event-section">
+
+    <section>
+      <motion.div
+        className="event-section"
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
         {eventos.map((evento, index) => (
           <CardEvent key={index} {...evento} />
         ))}
+      </motion.div>
     </section>
   );
 };

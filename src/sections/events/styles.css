@@ -1,9 +1,15 @@
 .event-section {
   background-color: #ffffff;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 0rem;
-  gap: 15px;
+  padding: 1rem 3rem;
+  gap: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .event-section {
+    padding: 1rem 1rem;
+  }
 }

@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { Event, LocationOn, ShoppingCart } from '@mui/icons-material';
-import { motion } from 'framer-motion';
 import './styles.css';
 
 const CardEvent = ({
@@ -17,12 +16,7 @@ const CardEvent = ({
   location: string;
 }) => {
   return (
-    <motion.div
-      className="card-event"
-      initial={{ opacity: 0, y: 80 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-    >
+    <div className="card-event">
       <div className="card-event__image-container">
         <Image src={imageSrc} alt={title} fill className="card-event__image" />
       </div>
@@ -41,7 +35,7 @@ const CardEvent = ({
           Comprar entrada
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

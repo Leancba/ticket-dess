@@ -1,35 +1,42 @@
+
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
   box-sizing: border-box;
 }
 
-.header-center {
-  display: flex;
+.header-left {
   flex: 1;
+  display: flex;
+  justify-content: left;
+}
+
+.header-center,
+.search-wrapper {
+  display: flex;
   justify-content: center;
+  flex: 2;
   height: 43px;
 }
 
 .header-right {
-  align-items: center;
   display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
   height: 45px;
-  width: 100%;
   max-width: 280px;
+  width: 100%;
   object-fit: contain;
 }
 
 .header-link {
-  padding: 0px 10px;
-  text-decoration: none;
   color: #333;
-  align-items: center;
-  gap: 0.4rem;
+  text-decoration: none;
 }
 
 .header-link:hover {
@@ -40,10 +47,27 @@
   display: none;
 }
 
-/* -----------------------------
-   NAV POR DEFECTO (DESKTOP)
------------------------------- */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
 
+.search-wrapper.mobile {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  z-index: 999;
+}
+
+/* ---------- NAV (DESKTOP) ---------- */
 .main-nav {
   background-color: #232323;
 }
@@ -51,10 +75,9 @@
 .nav-list {
   list-style: none;
   display: flex;
-  padding: 0;
+  justify-content: left;
   margin: 0;
-  justify-content: center;
-  align-items: center;
+  padding: 0rem 2rem;
 }
 
 .nav-list a {
@@ -64,34 +87,45 @@
   color: white;
   background-color: #1e1e1e;
   border: 1px solid #333;
+  border-left: 1px solid #333;
   font-weight: 600;
   transition: background-color 0.2s ease;
 }
+
+.nav-list li:first-child a {
+  border-left: none;
+}
+
 
 .nav-list a:hover {
   background-color: #ff6f1d;
   color: white;
 }
 
-.search-bar-container {
-  display: none;
-}
-
-
-/* -----------------------------
-   MEDIA QUERY: ≤ 990px (MOBILE)
------------------------------- */
+/* ---------- MOBILE STYLES ---------- */
 @media (max-width: 990px) {
-
   .header-center {
     display: none;
   }
 
-  .header-container {
+  .header-left {
+    flex: 1;
     display: flex;
-    align-items: center;
-    padding: 1rem 0.5rem;
-    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .search-wrapper.mobile {
+    display: flex;
   }
 
   .main-nav {
@@ -101,8 +135,8 @@
     z-index: 999;
     background-color: #000;
     max-height: 0;
-    overflow: hidden;
     opacity: 0;
+    overflow: hidden;
     pointer-events: none;
     transition: max-height 0.4s ease, opacity 0.4s ease;
   }
@@ -114,24 +148,10 @@
   }
 
   .nav-list {
-    display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    width: 100%;
-  }
-
-  .nav-list li {
-    width: 100%;
   }
 
   .nav-list li a {
-    display: block;
-    padding: 1rem;
-    color: white;
-    text-decoration: none;
-    background-color: #000;
     text-align: left;
     font-size: 1rem;
     font-weight: 500;
@@ -143,58 +163,4 @@
     background-color: #111;
     color: #ff6f1d;
   }
-
-  .header-container {
-    justify-content: center;
-  }
-
-  .header-left {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-  }
-
-  .mobile-menu-button {
-    display: flex;
-    flex-direction: row;
-    margin-right: 1rem;
-  }
-
-  .menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
-    display: flex;
-    align-items: center;
-    padding: 0.25rem;
-  }
-
-  .search-bar-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 0;
-    box-sizing: border-box;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-  }
-
-  .search-bar-container.show {
-    max-height: 60px;
-    opacity: 1;
-    pointer-events: auto;
-    padding: 0.5rem 2rem;
-  }
-
 }
-
-@media (max-width: 770px) {}

@@ -1,12 +1,18 @@
-import type { NextConfig } from "next";
+const withVideos = require('next-videos');
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'www.todopass.com.ar', 'blogger.googleusercontent.com'],
+    domains: [
+      'images.unsplash.com',
+      'www.todopass.com.ar',
+      'blogger.googleusercontent.com',
+      'www.afip.gob.ar'
+    ],
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
 };
 
-export default nextConfig;
+module.exports = withVideos(nextConfig);

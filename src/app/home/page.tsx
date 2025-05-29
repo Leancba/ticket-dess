@@ -2,16 +2,18 @@
 import './styles.css';
 import Carrousel from '@/components/carrousel';
 import EventSection from '@/sections/events';
-import SocialLinksSection from '@/sections/social/SocialLinksSection';
+import NewsletterSection from '@/sections/newsletter';
+import SocialLinksSection from '@/sections/social/SocialLinksSection'
+
+
 
 export default function HomePage() {
   return (
     <div>
       <Carrousel/>
-      <EventSection/>
-      {/* <NewsletterSection/> */}
-      <SocialLinksSection/>
-      {/* <BannerSection/> */}
+      {/* <EventSection/>
+      <NewsletterSection/>
+      <SocialLinksSection/> */}
     </div>
   );
 }
