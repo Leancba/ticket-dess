@@ -12,8 +12,8 @@ export default function HomePage() {
     <div>
       {/* <Carrousel/>
       <EventSection/>
-      <NewsletterSection/>
-      <SocialLinksSection/> */}
+      <NewsletterSection/> */}
+      <SocialLinksSection/>
     </div>
   );
 }
