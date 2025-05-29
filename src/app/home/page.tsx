@@ -5,15 +5,13 @@ import EventSection from '@/sections/events';
 import NewsletterSection from '@/sections/newsletter';
 import SocialLinksSection from '@/sections/social/SocialLinksSection'
 
-
-
 export default function HomePage() {
   return (
     <div>
-      {/* <Carrousel/> */}
+      <Carrousel/>
       <EventSection/>
-      {/* <NewsletterSection/>
-      <SocialLinksSection/> */}
+      <NewsletterSection/>
+      <SocialLinksSection/>
     </div>
   );
 }

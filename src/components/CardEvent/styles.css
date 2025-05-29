@@ -31,7 +31,7 @@
 .card-event__title {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin: 8px 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -85,10 +85,28 @@
   color: #ff6d00;
 }
 
-@media (max-width: 768px) {
-  
+.product-flags {
+  position: absolute;
+  margin: 5px;
+  z-index: 2;
+}
 
-  
+.product-flags .new {
+  background-color: #ff6d00;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-weight: 700;
+  color: white;
+}
+
+.underline-info {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    
 .card-event__button {
     font-size: 10px;
   }

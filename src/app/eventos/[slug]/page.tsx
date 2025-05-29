@@ -1,8 +1,4 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; 
-import './styles.css';
-import SearchIcon from '@mui/icons-material/Search';
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 const eventos = [
   {
@@ -79,71 +75,20 @@ const eventos = [
   },
 ];
 
-export default function SearchInput() {
+export default function EventDetail({ params }: any) {
+  const { slug } = params;
 
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const router = useRouter();
-
-  const handleCardClick = (evento) => {
-    console.log(evento)
-  };
-
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const eventosFiltrados = eventos.filter((evento) =>
-    evento.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    evento.location.toLowerCase().includes(searchTerm.toLowerCase())
+  const evento = eventos.find(ev => 
+    ev.title.toLowerCase().replace(/\s+/g, '-') === slug
   );
 
-  return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Buscar"
-        className="search-input"
-        value={searchTerm}
-        onChange={handleChange}
-        autoComplete="off"
-      />
-      <button type="submit" className="search-button">
-        <SearchIcon fontSize="small" />
-      </button>
+  if (!evento) return notFound();
 
-      {searchTerm.trim() !== '' && eventosFiltrados.length > 0 && (
-        <div className="search-results-dropdown">
-          {eventosFiltrados.map((evento, index) => (
-            <div
-              key={index}
-              className="search-result-item"
-              onClick={() => handleCardClick(evento)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="search-result-image-wrapper">
-                <Image
-                  src={evento.imageSrc}
-                  alt={evento.title}
-                  width={50}
-                  height={50}
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="search-result-info">
-                <span className="search-result-title">{evento.title}</span>
-                <span className="search-result-sub">
-                  {evento.date} – {evento.location}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </form>
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>{evento.title}</h1>
+      <p>{evento.date} - {evento.location}</p>
+      <img src={evento.imageSrc} alt={evento.title} width="100%" />
+    </div>
   );
 }
