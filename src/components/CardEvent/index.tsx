@@ -15,7 +15,7 @@ const CardEvent = ({
   title: string;
   date: string;
   location: string;
-  isNew: boolean;
+  isNew?: boolean;
 }) => {
   return (
     <div className="card-event">

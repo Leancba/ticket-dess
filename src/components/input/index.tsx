@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './styles.css';
 import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image';
@@ -78,21 +78,19 @@ const eventos = [
   },
 ];
 
+
 export default function SearchInput() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleCardClick = (evento) => {
-    console.log(evento)
-  };
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(e.target.value);
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+};
 
   const eventosFiltrados = eventos.filter((evento) =>
     evento.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -119,7 +117,8 @@ export default function SearchInput() {
             <div
               key={index}
               className="search-result-item"
-              onClick={() => handleCardClick(evento)}
+              onClick={() => console.log('hola')}
+
               style={{ cursor: 'pointer' }}
             >
               <div className="search-result-image-wrapper">
